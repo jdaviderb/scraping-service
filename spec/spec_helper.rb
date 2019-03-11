@@ -1,9 +1,12 @@
+ENV['RACK_ENV'] = 'test'
+
+require 'simplecov'
+SimpleCov.start { load_adapter 'test_frameworks' }
+
 require 'rack/test'
 require 'rspec'
 require 'json'
-
-ENV['RACK_ENV'] = 'test'
-
+require_relative '../bootstrap'
 require_relative '../app'
 
 module RSpecMixin
